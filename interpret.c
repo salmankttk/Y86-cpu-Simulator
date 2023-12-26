@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "p4-interp.h"
+#include "./headers/interpret.h"
 
 y86_register_t opHandler(y86_register_t valB, y86_register_t *valA, y86_inst_t inst, y86_t *cpu);
 y86_register_t checkForRegister(y86_rnum_t reg, y86_t *cpu);
@@ -14,7 +14,7 @@ void writeBack(y86_rnum_t reg, y86_t *cpu, y86_register_t valE);
 /*
  * usage_p4() - print usage information for this program
  */
-void usage_p4()
+void usage_interp()
 {
     printf("Usage: y86 <option(s)> mini-elf-file\n");
     printf(" Options are:\n");
@@ -301,7 +301,6 @@ y86_register_t decode_execute(y86_t *cpu, bool *cond, const y86_inst_t *inst,
 /*
  * This function handles the memory and writeback stages of the CPU.
  */
-* /
     void memory_wb_pc(y86_t *cpu, memory_t memory, bool cond,
                       const y86_inst_t *inst, y86_register_t valE,
                       y86_register_t valA)

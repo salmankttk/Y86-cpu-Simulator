@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "p3-disas.h"
+#include "./headers/disassemble.h"
 bool is_valid_reg(y86_t *cpu, memory_t memory, y86_inst_t *ins);
 bool validate_pc(y86_t *cpu, int offset);
 y86_inst_t set_invalid_ins(y86_t *cpu, y86_inst_t *ins);
@@ -12,7 +12,7 @@ void print_spacing(int printed);
 /*
  * Print the usage message for this program.
  */
-void usage_p3()
+void usage_dis()
 {
     printf("Usage: y86 <option(s)> mini-elf-file\n");
     printf(" Options are:\n");

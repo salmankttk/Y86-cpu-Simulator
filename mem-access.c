@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "p2-load.h"
+#include "./headers/mem-access.h"
 
 /*
  * Print the usage message for this program.
  */
-void usage_p2()
+void usage_mem()
 {
     printf("Usage: y86 <option(s)> mini-elf-file\n");
     printf(" Options are:\n");
@@ -64,7 +64,6 @@ bool read_phdr(FILE *file, uint16_t offset, elf_phdr_t *phdr)
  * Read the program headers from the file and store them in the array.
  * Return true if the headers are valid, false otherwise.
  */
-* /
     void dump_phdrs(uint16_t numphdrs, elf_phdr_t phdr[])
 {
     printf("Segment   Offset    VirtAddr  FileSize  Type      Flag\n");

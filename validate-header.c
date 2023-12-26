@@ -1,13 +1,13 @@
 #include <getopt.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "p1-check.h"
+#include "./headers/validate-header.h"
 // Needed to check validity of magic number across endian storage methods.
 #include <netinet/in.h>
 /*
  * Print the usage message for this program.
  */
-void usage_p1()
+void usage_val()
 {
     printf("Usage: y86 <option(s)> mini-elf-file\n");
     printf(" Options are:\n");

@@ -7,10 +7,10 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "p1-check.h"
-#include "p2-load.h"
-#include "p3-disas.h"
-#include "p4-interp.h"
+#include "./headers/validate-header.h"
+#include "./headers/mem-access.h"
+#include "./headers/disassemble.h"
+#include "./headers/interpret.h"
 
 int main(int argc, char **argv)
 {
@@ -90,7 +90,7 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE);
     }
 
-    // create an array of program headers... free at end.
+    // create an array of program headers
     elf_phdr_t *phdr = malloc(sizeof(elf_phdr_t) * hdr->e_num_phdr);
 
     // create a virtual memory to allocate information to. The size is MEMSIZE.
